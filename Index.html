@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BitFlare - Ignite Your Tech</title>
+  <style>
+    /* General Styling */
+    body {
+      font-family: "Arial", sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background-color: #f4f4f4;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #131921;
+      color: #fff;
+      padding: 20px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    header img {
+      width: 120px;
+      height: auto;
+    }
+
+    header .cta-button {
+      padding: 10px 20px;
+      background-color: #f8a317;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    header .cta-button:hover {
+      background-color: #e68900;
+    }
+
+    main {
+      margin-top: 100px;
+      padding: 20px;
+    }
+
+    section.product {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    section.product .product-image {
+      flex: 1;
+      padding: 10px;
+    }
+
+    section.product img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    section.product .product-details {
+      flex: 2;
+      padding: 10px 20px;
+    }
+
+    section.product h2 {
+      font-size: 2.5rem;
+      color: #f8a317;
+    }
+
+    section.product p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    section.product .price {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    section.product form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    section.product form label {
+      font-size: 1rem;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    section.product form select,
+    section.product form input,
+    section.product form textarea,
+    section.product form button {
+      width: 100%;
+      max-width: 400px;
+      padding: 10px;
+      margin-bottom: 15px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    section.product form select,
+    section.product form textarea {
+      background-color: #f9f9f9;
+    }
+
+    section.product form button {
+      background-color: #f8a317;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    section.product form button:hover {
+      background-color: #e68900;
+    }
+
+    .delivery-time {
+      font-size: 1rem;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    footer {
+      background-color: #131921;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #f8a317;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Add some responsiveness */
+    @media (max-width: 768px) {
+      section.product {
+        flex-direction: column;
+      }
+
+      section.product .product-details {
+        padding: 20px;
+      }
+
+      header img {
+        width: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.jpg" alt="BitFlare Logo">
+    <a href="#product" class="cta-button">Order Now for £67.99</a>
+  </header>
+
+  <main>
+    <section id="product" class="product">
+      <div class="product-image">
+        <img src="product-image.jpg" alt="FlareLink ESP32 Tool">
+      </div>
+      <div class="product-details">
+        <h2>FlareLink - The Ultimate ESP32-Based Tool</h2>
+        <p>The FlareLink is a powerful tool designed to fuel your projects with precision and power. Whether you're a hobbyist or a developer, this device will meet your needs.</p>
+        <p class="price">Price: £67.99</p>
+        <form id="order-form">
+          <!-- Country Selector -->
+          <label for="country">Select Country:</label>
+          <select id="country" name="country" required>
+            <option value="" disabled selected>Select your country</option>
+            <option value="UK">United Kingdom</option>
+            <option value="US">United States</option>
+            <option value="DE">Germany</option>
+            <option value="FR">France</option>
+            <option value="ES">Spain</option>
+            <!-- Add other countries as needed -->
+          </select>
+
+          <!-- Address Field -->
+          <label for="address">Enter Address:</label>
+          <input type="text" id="address" name="address" placeholder="Street Address" required>
+
+          <!-- Postcode Field -->
+          <label for="postcode">Enter Postcode:</label>
+          <input type="text" id="postcode" name="postcode" placeholder="Postcode" required>
+
+          <label for="firmware">Pre-Flashed Firmware:</label>
+          <select id="firmware" name="firmware" required>
+            <option value="marauder" selected>Marauder</option>
+            <option value="bruce" disabled>Bruce (Coming Soon)</option>
+          </select>
+
+          <button type="submit">Place Order</button>
+        </form>
+        <p class="delivery-time">Delivery Time: 20-30 Days</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 BitFlare. All Rights Reserved.</p>
+    <nav>
+      <a href="#about">About Us</a> | <a href="#terms">Terms of Service</a> | <a href="#contact">Contact Us</a>
+    </nav>
+  </footer>
+
+  <script>
+    document.getElementById('order-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const country = document.getElementById('country').value;
+      const address = document.getElementById('address').value.trim();
+      const postcode = document.getElementById('postcode').value.trim();
+      const firmware = document.getElementById('firmware').value;
+      const price = 67.99;
+      const deliveryTime = "20-30 days";
+
+      if (!address || !postcode || !country) {
+        alert("Please enter a valid delivery address, postcode, and country.");
+        return;
+      }
+
+      // Simulated email content
+      const emailContent = `
+        New Order Received!
+        Firmware: ${firmware}
+        Country: ${country}
+        Address: ${address}
+        Postcode: ${postcode}
+        Price: £${price}
+        Delivery Time: ${deliveryTime}
+      `;
+
+      console.log(emailContent); // Simulate email sending
+      alert(`Order placed successfully! Delivery to:\n${address}, ${postcode}, ${country}\nEstimated time: ${deliveryTime}.`);
+    });
+  </script>
+</body>
+</html>
